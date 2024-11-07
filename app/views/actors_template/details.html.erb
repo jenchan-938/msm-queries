@@ -25,7 +25,8 @@
 
 </dl>
 
-<%matching_characters=Character.where({ :actor_id => @the_actor_id }) %>
+<%matching_characters=Character.where({ :actor_id => @the_actor.id }) %>
+
 
 <table border ="1">
   <tr>
