@@ -10,7 +10,7 @@
     <th> </th>
   </tr>
 
-<%=Movie.all.each do |a_movie| %>
+<%Movie.all.each do |a_movie| %>
 <tr>
  <td><%=a_movie.id%> </td>
  <td><img src="<%=a_movie.image%>" width ="50" </td>
