@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   get("/directors", { :controller => "directors", :action =>"index"})
 
+  get("/directors/youngest", {controller => "directors", :action =>"youngest"})
+
+  get("/directors/eldest", {controller => "eldest", :action =>"eldest"})
+
   get("/directors/:an_id", {:controller=> "directors", :action => "show"}) 
   
   get("/movies", { :controller => "movies", :action =>"index"})
@@ -12,5 +16,7 @@ Rails.application.routes.draw do
   get("/actors", {:controller => "actors", :action => "index"})
 
   get("/actors/:an_id", {:controller => "actors", :action => "show"})
+
+  get("")
 
 end
