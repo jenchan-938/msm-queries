@@ -12,7 +12,7 @@ class DirectorsController < ApplicationController
   end
 
   def eldest
-    @eld = Director.maximum(:dob)
+    @eld = Director.minimum(:dob)
     @matching_records = Director.where({ :dob=> @eld})
     @eld_director = @matching_records.at(0)
     @eld_director_name = @eld_director.name
@@ -20,4 +20,12 @@ class DirectorsController < ApplicationController
     render({ :template => "directors_template/eldest"})
   end
 
+  def youngest
+    young= Director.maximum(:dob)
+    matching_records =Director.where({ :dob =>young})
+    young_director =matching_records.at(0)
+    @young_director_name= young_director.name
+    @young_date =young.strftime("%B %d, %Y")
+    render ({ :template => "directors_template/youngest"})
+  end
 end
